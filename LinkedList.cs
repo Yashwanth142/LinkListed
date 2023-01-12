@@ -16,7 +16,6 @@ namespace LinkedListDemo
             this.size = 0;
             this.head = null;
         }
-
         public void insertNode(int data)
         {
             Node node = new Node();
@@ -43,6 +42,27 @@ namespace LinkedListDemo
             }
         }
 
+        public void insertNth(int data, int position)
+        {
+            Node node = new Node();
+            node.data = data;
+            Node current = this.head;
+            if (this.head != null && position <= this.size)
+            {
+                for (int i = 1; i < position; i++)
+                {
+                    current = current.next;
+                }
+                node.next = current.next;
+                current.next = node;
+                this.size += 1;
+            }
+            else
+            {
+                Console.WriteLine("Exceeded the linked list size. Current Size: " + size);
+            }
+        }
+
 
         public void printNodes()
         {
@@ -65,6 +85,7 @@ namespace LinkedListDemo
         {
             return size;
         }
+
 
     }
 }
