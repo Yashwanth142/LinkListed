@@ -16,6 +16,7 @@ namespace LinkedListDemo
             this.size = 0;
             this.head = null;
         }
+
         public void insertNode(int data)
         {
             Node node = new Node();
@@ -58,6 +59,7 @@ namespace LinkedListDemo
                 }
             }
         }
+
 
         public int getListSize()
         {
