@@ -13,12 +13,8 @@
             list.insertNode(70);
             list.printNodes();
 
-
-            Console.WriteLine("Current Size of the list is: " + list.getListSize());
-            Console.WriteLine("Deleting node from 2nd location");
-            list.deleteNthNode(2);
-            list.printNodes();
-
+            Console.WriteLine();
+            list.orderNodes();
         }
     }
 }
