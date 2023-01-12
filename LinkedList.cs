@@ -97,6 +97,26 @@ namespace LinkedListDemo
             }
         }
 
+        public void deleteNthNode(int position)
+        {
+            if (position <= this.size && this.head != null)
+            {
+                Node currentNode = this.head;
+                Node prevNode = null;
+                for (int i = 0; i < position; i++)
+                {
+                    prevNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                prevNode.next = currentNode.next;
+                this.size--;
+            }
+            else
+            {
+                Console.WriteLine("No node exist at location: " + position);
+            }
+        }
+
         public void findNode(int data)
         {
             Node node = this.head;
@@ -130,6 +150,8 @@ namespace LinkedListDemo
                 }
             }
         }
+
+
         public int getListSize()
         {
             return size;
