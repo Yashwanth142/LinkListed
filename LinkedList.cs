@@ -16,7 +16,6 @@ namespace LinkedListDemo
             this.size = 0;
             this.head = null;
         }
-
         public void insertNode(int data)
         {
             Node node = new Node();
@@ -74,6 +73,27 @@ namespace LinkedListDemo
             else
             {
                 Console.WriteLine("Linked list is empty");
+            }
+        }
+
+        public void deleteLastNode()
+        {
+            Node currentNode = this.head;
+            if (size == 1)
+            {
+                head = null;
+                size = 0;
+            }
+            else
+            {
+                Node prevNode = null;
+                while (currentNode.next != null)
+                {
+                    prevNode = currentNode;
+                    currentNode = currentNode.next;
+                }
+                prevNode.next = null;
+                this.size--;
             }
         }
 
