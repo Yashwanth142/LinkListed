@@ -8,39 +8,61 @@ namespace LinkedListDemo
 {
     public class LinkedList
     {
-        Node head;
-        public void Add(int data)
+        private int size;
+        private Node head;
+
+        public LinkedList()
         {
-            Node node = new Node(data);
+            this.size = 0;
+            this.head = null;
+        }
+        public void insertNode(int data)
+        {
+            Node node = new Node();
+            node.data = data;
+            Node current = this.head;
 
             if (this.head == null)
             {
                 this.head = node;
+                this.head.next = null;
+                this.size = 1;
+                Console.WriteLine(this.head);
             }
             else
             {
-                Node temp = head;
-                while (temp.next != null)
+
+                while (current.next != null)
                 {
-                    temp = temp.next;
+                    current = current.next;
                 }
-                temp.next = node;
+                current.next = node;
+                node.next = null;
+                this.size += 1;
             }
-            Console.WriteLine("{0} inserted into linked list", data);
         }
-        public void Display()
+
+
+        public void printNodes()
         {
-            Node temp = this.head;
-            if (temp == null)
+            if (this.size < 1)
+                Console.WriteLine("There are no nodes in the linked list");
+
+            else
             {
-                Console.WriteLine("Linked list is empty");
-                return;
-            }
-            while (temp != null)
-            {
-                Console.WriteLine(temp.data+" ");
-                temp = temp.next;
+                Node current = this.head;
+                for (int i = 0; i < this.size; i++)
+                {
+                    Console.WriteLine("Node " + current.data + " is at location " + i);
+                    current = current.next;
+                }
             }
         }
+
+        public int getListSize()
+        {
+            return size;
+        }
+
     }
 }
