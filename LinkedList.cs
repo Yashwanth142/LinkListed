@@ -16,6 +16,7 @@ namespace LinkedListDemo
             this.size = 0;
             this.head = null;
         }
+
         public void insertNode(int data)
         {
             Node node = new Node();
@@ -60,6 +61,19 @@ namespace LinkedListDemo
             else
             {
                 Console.WriteLine("Exceeded the linked list size. Current Size: " + size);
+            }
+        }
+
+        public void deleteFirstNode()
+        {
+            if (head != null)
+            {
+                this.head = this.head.next;
+                this.size--;
+            }
+            else
+            {
+                Console.WriteLine("Linked list is empty");
             }
         }
 
