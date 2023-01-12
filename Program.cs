@@ -4,12 +4,14 @@
     {
         public static void Main(string[] args)
         {
-            LinkedList list= new LinkedList();
-            list.Add(36);
-            list.Add(30);
-            list.Add(70);
+            LinkedList list = new LinkedList();
 
-            list.Display();
+            Console.WriteLine("Current Size of the list is: " + list.getListSize());
+
+            list.insertNode(56);
+            list.insertNode(30);
+            list.insertNode(70);
+            list.printNodes();
         }
     }
 }
