@@ -130,12 +130,9 @@ namespace LinkedListDemo
                 }
             }
         }
-
-
         public int getListSize()
         {
             return size;
         }
-
     }
 }
